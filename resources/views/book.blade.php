@@ -6,7 +6,6 @@
     <div class="d-flex justify-content-end">
         <a href="book-add" class="btn btn-primary mt-3 me-5">Add New Book</a>
         <a href="book-deleted" class="btn btn-secondary mt-3">View Delete Data</a>
-
     </div>
 
     <div class="mt-3">
@@ -21,8 +20,8 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>Title</th>
                         <th>book_code</th>
+                        <th>Title</th>
                         <th>Status</th>
                         <th>Action</th>
                 </thead>

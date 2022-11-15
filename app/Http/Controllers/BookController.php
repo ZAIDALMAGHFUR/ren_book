@@ -44,14 +44,6 @@ class BookController extends Controller
         return view('book-edit', ['book' => $book]);
     }
 
-    // public function update(Request $request, $slug)
-    // {
-    //     $request->validate([
-    //         'book_code' => 'required|unique:books',
-    //         'title' => 'required|max:255',
-    //     ]);
-    //     return redirect('books')->with('status', 'Book has been updated!');
-    // }
 
     public function delete($slug)
     {
@@ -89,17 +81,10 @@ class BookController extends Controller
         return view('book-deleted', ['books' => $books]);
     }
 
-    public function restore($slug)
+    public function restore($id = null)
     {
-        $book = Book::where('slug', $slug)->withTrashed()->first();
-        $book = Book::onlyTrashed()->get();
-        $book->reverse();
+        $book = Book::onlyTrashed()->where('id', $id)->first();
+        $book->restore();
         return redirect('books')->with('status', 'Book has been restored!');
     }
-        // public function restore($slug)
-    // {
-    //     $category = Category::onlyTrashed()->where('slug', $slug)->first();
-    //     $category->restore();
-    //     return redirect('categories')->with('success', 'Category restored successfully.');
-    // }
 }

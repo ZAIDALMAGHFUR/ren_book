@@ -32,10 +32,10 @@
                             <td>{{ $b->status }}</td>
                             <td>{{ $b->book_code }}</td>
                             <td>
-                                <form action="/books/{{ $b->book_code }}" method="post">
+                                <form action="/books/{{ $b->id}}" method="post">
                                     @csrf
                                     @method('destroy')
-                                    <a href="book-restore/{{ $b->book_code }}" style="text-decoration: none;" class="btn btn-info">Restore</a>
+                                    <a href="book-restore/{{ $b->id }}" style="text-decoration: none;" class="btn btn-info">Restore</a>
                                 </form>
                             </td>
                         </tr>
