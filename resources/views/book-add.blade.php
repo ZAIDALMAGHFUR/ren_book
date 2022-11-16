@@ -33,14 +33,14 @@
                 <label for="image">Image</label>
                 <input type="file" name="image" class="form-control">
             </div>
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <label for="cotegory" class="form-label">Category</label>
                 <select name="categories[]" id="category" class="form-control select-multiple" multiple>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary" >Submit</button>
             </div>
