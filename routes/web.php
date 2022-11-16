@@ -59,3 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::get('category-restore/{slug}', [CategoryController::class, 'restore']);
     Route::get('rentlog', [RentlogController::class, 'index']);
 });
+
+// Route::get('pindah', function () {
+//     return view('pindah');
+// });

@@ -22,6 +22,7 @@
                         <th>NO</th>
                         <th>book_code</th>
                         <th>Title</th>
+                        <th>Category</th>
                         <th>Status</th>
                         <th>Action</th>
                 </thead>
@@ -31,6 +32,11 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $book->book_code }}</td>
                             <td>{{ $book->title }}</td>
+                            <td>
+                                @foreach ($book->categories as $category)
+                                    <span class="btn btn-info">{{ $category->name }}</span>
+                                @endforeach
+                            </td>
                             <td>{{ $book->status }}</td>
                             <td>
                                 <a href="book-edit/{{ $book->slug }}" style="text-decoration: none;" class="btn btn-info me-2">Edit</a>

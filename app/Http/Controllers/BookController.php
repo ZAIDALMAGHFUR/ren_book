@@ -41,7 +41,8 @@ class BookController extends Controller
     public function edit($slug)
     {
         $book = Book::where('slug', $slug)->first();
-        return view('book-edit', ['book' => $book]);
+        $categories = Category::all();
+        return view('book-edit', ['book' => $book, 'categories' => $categories]);
     }
 
 
@@ -66,13 +67,21 @@ class BookController extends Controller
 
     public function update(Request $request, $slug)
     {
-        $request->validate([
-            'book_code' => 'required|unique:books',
-            'title' => 'required|max:255'
-        ]);
-        $book = book::where('slug', $slug)->first();
+        $newName = null;
+        if ($request->file('image')) {
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $newName = $request->title.'-'.now()->timestamp.'.'.$extension;
+            $request->file('image')->storeAs('cover', $newName);
+        }
+
+        // $request['cover'] = $newName;
+        $book = Book::where('slug', $slug)->first();
         $book->update($request->all());
-        return redirect('books')->with('success', 'Book updated successfully.');
+
+        if ($request->categories) {
+            $book->categories()->sync($request->categories);
+        }
+        return redirect('books')->with('status', 'Book has been updated!');
     }
 
     public function deleted()
