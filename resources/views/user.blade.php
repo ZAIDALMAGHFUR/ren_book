@@ -1,5 +1,5 @@
 @extends('layout.mainlyout')
-@section('title', 'User')
+@section('title', 'User List')
 
 @section('content')
     <h1>User List</h1>

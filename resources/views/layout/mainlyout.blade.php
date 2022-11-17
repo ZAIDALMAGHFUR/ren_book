@@ -34,6 +34,7 @@
             <div class="row g-0 h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSupportedContent">
                     <ul class="nav flex-column" style="padding: 40px; margin-top: 40px;">
+                        @if (Auth::user())
                         @if (Auth::user()->role_id == 1)
                         <li class="nav-item">
                             <a class="nav-link" href="/dashboard" style="color: white;">Dashboard</a>
@@ -59,6 +60,15 @@
                         </li><li class="nav-item">
                             <a class="nav-link" href="logout" style="color: white;">Logout</a>
                         </li>
+                        @endif
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login" style="color: white;">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register" style="color: white;">Register</a>
+                            </li>
+                        
                         @endif
                     </ul>
                 </div>

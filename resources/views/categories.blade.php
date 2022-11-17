@@ -29,7 +29,7 @@
                             <td>{{ $category->name }}</td>
                             <td>
                                 <form action="/categories/{{ $category->id }}" method="post">
-                                    <a href="category-edit/{{ $category->slug }}" style="text-decoration: none;">Edit</a>
+                                    <a href="category-edit/{{ $category->slug }}" class="btn btn-info" style="text-decoration: none;">Edit</a>
                                     @csrf
                                     @method('destroy')
                                     <a href="category-delete/{{ $category->slug }}" style="text-decoration: none;" class="btn btn-danger">Delete</a>
