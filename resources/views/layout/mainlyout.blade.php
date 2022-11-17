@@ -36,22 +36,22 @@
                     <ul class="nav flex-column" style="padding: 40px; margin-top: 40px;">
                         @if (Auth::user()->role_id == 1)
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard" style="color: white;">Dashboard</a>
+                            <a class="nav-link" href="/dashboard" style="color: white;">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="books" style="color: white;">Books</a>
+                            <a class="nav-link" href="/books" style="color: white;">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="categories" style="color: white;">Categories</a>
+                            <a class="nav-link" href="/categories" style="color: white;">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="users" style="color: white;">User</a>
+                            <a class="nav-link" href="/users" style="color: white;">User</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="rentlog" style="color: white;">Rent Log</a>
+                            <a class="nav-link" href="/rentlog" style="color: white;">Rent Log</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="logout" style="color: white;">Logout</a>
+                            <a class="nav-link" href="/logout" style="color: white;">Logout</a>
                         </li>
                         @else
                         <li class="nav-item">

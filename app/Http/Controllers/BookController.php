@@ -17,7 +17,8 @@ class BookController extends Controller
 
     public function add()
     {
-        return view('book-add');
+        $categories = Category::all();
+        return view('book-add', ['categories' => $categories]);
     }
 
     public function store(Request $request)
@@ -27,6 +28,7 @@ class BookController extends Controller
             'title' => 'required|max:255',
         ]);
 
+        $newwName ='';
         if ($request->file('image')) {
             $extension = $request->file('image')->getClientOriginalExtension();
             $newwName = $request->title.'-'.now()->timestamp.'.'.$extension;
@@ -67,17 +69,15 @@ class BookController extends Controller
 
     public function update(Request $request, $slug)
     {
-        $newName = null;
         if ($request->file('image')) {
             $extension = $request->file('image')->getClientOriginalExtension();
             $newName = $request->title.'-'.now()->timestamp.'.'.$extension;
             $request->file('image')->storeAs('cover', $newName);
+            $request['cover'] = $newName;
         }
 
-        // $request['cover'] = $newName;
         $book = Book::where('slug', $slug)->first();
         $book->update($request->all());
-
         if ($request->categories) {
             $book->categories()->sync($request->categories);
         }

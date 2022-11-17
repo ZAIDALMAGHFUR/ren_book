@@ -38,6 +38,13 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index']) ->Middleware('OnlyAdmin');
     Route::get('profile', [UserController::class, 'profile']) ->Middleware('OnlyClient');
     Route::get('users', [UserController::class, 'index']);
+    Route::get('register-user', [UserController::class, 'register']);
+    Route::get('user-detail/{slug}', [UserController::class, 'show']);
+    Route::get('user-acc/{slug}', [UserController::class, 'acc']);
+    Route::get('user-ban/{slug}', [UserController::class, 'hapus']);
+    Route::get('user-destroy/{slug}', [UserController::class, 'destroy']);
+    Route::get('user-kehapus', [UserController::class, 'kehapus']);
+    Route::get('user-restore/{slug}', [UserController::class, 'restore']);
     Route::get('books', [BookController::class, 'index']);
     Route::get('book-add', [BookController::class, 'add']);
     Route::post('book-add', [BookController::class, 'store']);
@@ -59,7 +66,3 @@ Route::middleware('auth')->group(function () {
     Route::get('category-restore/{slug}', [CategoryController::class, 'restore']);
     Route::get('rentlog', [RentlogController::class, 'index']);
 });
-
-// Route::get('pindah', function () {
-//     return view('pindah');
-// });
