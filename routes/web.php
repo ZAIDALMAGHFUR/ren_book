@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RentlogController;
+use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -64,6 +65,8 @@ Route::middleware('auth')->group(function () {
         Route::get('category-destroy/{slug}', [CategoryController::class, 'destroy']);
         Route::get('category-deleted', [CategoryController::class, 'deletedcategory']);
         Route::get('category-restore/{slug}', [CategoryController::class, 'restore']);
-        Route::get('rentlog', [RentlogController::class, 'index']);
+        Route::get('book-rent', [BookRentController::class, 'index']);
+        Route::post('book-rent', [BookRentController::class, 'store']);
     });
+    Route::get('rentlog', [RentlogController::class, 'index']);
 });

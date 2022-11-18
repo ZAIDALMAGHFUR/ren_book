@@ -52,6 +52,9 @@
                             <a class="nav-link" href="/rentlog" style="color: white;">Rent Log</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/book-rent" style="color: white;">book Rent</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/logout" style="color: white;">Logout</a>
                         </li>
                         @else
