@@ -1,10 +1,7 @@
-@extends('layout.mainlyout')
-@section('title', 'Rent Logs')
-
-@section('content')
-<h1>tihs is pages rent log</h1>
-        <div class="mt-5">
-            <table class="table">
+<div>
+    <!-- If you do not have a consistent goal in life, you can not live it in a consistent way. - Marcus Aurelius -->
+{{ $rentlog }}
+    {{-- <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
@@ -26,7 +23,5 @@
                 <td>{{ $r->actual_retrun_date }}</td>
             </tr>
             @endforeach
-    </table>
-        </div>
-@endsection
-
+    </table> --}}
+</div>

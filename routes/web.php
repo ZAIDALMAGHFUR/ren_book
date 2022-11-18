@@ -67,6 +67,6 @@ Route::middleware('auth')->group(function () {
         Route::get('category-restore/{slug}', [CategoryController::class, 'restore']);
         Route::get('book-rent', [BookRentController::class, 'index']);
         Route::post('book-rent', [BookRentController::class, 'store']);
+        Route::get('rentlog', [RentlogController::class, 'index']);
     });
-    Route::get('rentlog', [RentlogController::class, 'index']);
 });
