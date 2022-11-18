@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 03:54 AM
+-- Generation Time: Nov 18, 2022 at 04:43 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,14 +44,20 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `book_code`, `title`, `cover`, `slug`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(5, 'A001-07', 'LARAVEL  1', 'C:\\xampp\\tmp\\phpCA00.tmp', 'horor', 'in stock', '2022-11-14 08:07:57', '2022-11-15 19:35:32', NULL),
-(6, 'A001-05', 'PHP', 'qq-1668440345.png', 'qq', 'in stock', '2022-11-14 08:39:05', '2022-11-15 19:18:04', NULL),
-(8, 'A001-04', 'HTML', 'HTML-1668443584.png', 'html', 'in stock', '2022-11-14 09:33:04', '2022-11-15 19:17:00', NULL),
-(11, 'A001-03', 'kima', 'kima-1668479680.png', 'kima', 'in stock', '2022-11-14 19:34:40', '2022-11-15 19:16:46', NULL),
-(16, 'A001-02', 'new', 'asdcxas-1668554323.jpg', 'asdcxas', 'in stock', '2022-11-15 16:18:43', '2022-11-15 19:16:24', NULL),
+(5, 'A001-07', 'LARAVEL  To Noob', 'C:\\xampp\\tmp\\phpCA00.tmp', 'horor', 'not avalible', '2022-11-14 08:07:57', '2022-11-18 05:07:15', NULL),
+(6, 'A001-05', 'PHP', '1668440345.png', 'qq', 'not avalible', '2022-11-14 08:39:05', '2022-11-18 05:07:29', NULL),
+(8, 'A001-04', 'HTML', 'HTML-1668443584.png', 'html', 'not avalible', '2022-11-14 09:33:04', '2022-11-18 05:10:01', NULL),
+(11, 'A001-03', 'kima', 'kima-1668479680.png', 'kima', 'not avalible', '2022-11-14 19:34:40', '2022-11-18 06:42:50', NULL),
+(16, 'A001-02', 'new', 'asdcxas-1668554323.jpg', 'asdcxas', 'not avalible', '2022-11-15 16:18:43', '2022-11-18 05:11:03', NULL),
 (21, 'A001-06', 'JS', 'jalan-1668555969.jpg', 'jalan', 'in stock', '2022-11-15 16:46:09', '2022-11-15 19:17:38', NULL),
-(22, 'A001-01', 'baru', 'dfvsdgvsa-1668559605.jpg', 'dfvsdgvsa', 'in stock', '2022-11-15 17:46:45', '2022-11-15 19:15:55', NULL),
-(23, 'A001-08', 'next js', 'next js-1668567041.png', 'next-js', 'in stock', '2022-11-15 19:50:41', '2022-11-15 19:50:41', NULL);
+(22, 'A001-01', 'baru', 'dfvsdgvsa-1668559605.jpg', 'dfvsdgvsa', 'not avalible', '2022-11-15 17:46:45', '2022-11-18 05:11:15', NULL),
+(23, 'A001-08', 'next js', 'next js-1668567041.png', 'next-js', 'not avalible', '2022-11-15 19:50:41', '2022-11-18 05:13:31', NULL),
+(24, 'hgfck4', 'rjfghn', '', 'rjfghn', 'not instock', '2022-11-16 06:37:36', '2022-11-17 07:01:06', NULL),
+(25, '1232', 'xvcbdcxfb', '', 'xvcbdcxfb', 'not avalible', '2022-11-16 06:39:21', '2022-11-18 05:21:43', NULL),
+(26, '123', 'fdvbzfx', '', 'fdvbzfx', 'not avalible', '2022-11-16 06:42:07', '2022-11-18 05:20:47', NULL),
+(27, 'saca', 'cvdsvSDV', '', 'cvdsvsdv', 'not avalible', '2022-11-16 06:42:51', '2022-11-18 05:21:54', NULL),
+(28, 'fdb', 'dfbd', '', 'dfbd', 'not avalible', '2022-11-16 06:46:43', '2022-11-18 05:20:32', NULL),
+(29, 'A001-09', 'PHP To Pro', 'PHP To Pro-1668693639.jpg', 'php-to-pro', 'not stok\n', '2022-11-17 07:00:39', '2022-11-18 05:18:03', NULL);
 
 -- --------------------------------------------------------
 
@@ -78,11 +84,15 @@ INSERT INTO `book_category` (`id`, `book_id`, `category_id`, `created_at`, `upda
 (14, 11, 6, NULL, NULL),
 (15, 8, 5, NULL, NULL),
 (16, 6, 3, NULL, NULL),
-(17, 5, 4, NULL, NULL),
-(19, 5, 6, NULL, NULL),
-(20, 5, 7, NULL, NULL),
 (21, 22, 4, NULL, NULL),
-(22, 22, 7, NULL, NULL);
+(22, 22, 7, NULL, NULL),
+(23, 23, 3, NULL, NULL),
+(24, 24, 6, NULL, NULL),
+(25, 28, 6, NULL, NULL),
+(26, 5, 3, NULL, NULL),
+(27, 5, 20, NULL, NULL),
+(28, 29, 7, NULL, NULL),
+(29, 29, 20, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -104,14 +114,15 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'novel', 'novel', NULL, '2022-11-14 20:27:33', '2022-11-14 20:27:33'),
-(3, 'fantasy', 'fantasy', NULL, NULL, NULL),
+(2, 'novel', 'novel', NULL, '2022-11-17 07:02:42', '2022-11-17 07:02:42'),
+(3, 'teknik', 'fantasy', NULL, '2022-11-17 07:02:32', NULL),
 (4, 'fiction', 'fiction', NULL, NULL, NULL),
 (5, 'myster', 'mystery', NULL, NULL, NULL),
 (6, 'horror', 'horor', NULL, NULL, NULL),
 (7, 'romance', 'romance', NULL, NULL, NULL),
 (8, 'westren', 'westren', NULL, NULL, NULL),
-(20, 'comic', 'comic', '2022-11-13 20:15:24', '2022-11-13 20:15:24', NULL);
+(20, 'comic', 'comic', '2022-11-13 20:15:24', '2022-11-13 20:15:24', NULL),
+(22, 'Work', 'work', '2022-11-17 07:02:58', '2022-11-17 07:02:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -160,7 +171,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2022_11_14_020058_change_slug_column_into_nullable_in_categories_table', 3),
 (15, '2022_11_14_023332_add_soft_delete_column_to_categories_table', 4),
 (16, '2022_11_14_144052_add_slug_cover_column_to_books_tabel', 5),
-(17, '2022_11_14_162800_add_soft_delete_column_to_books_table', 6);
+(17, '2022_11_14_162800_add_soft_delete_column_to_books_table', 6),
+(18, '2022_11_17_084105_add_slug_to_user_table', 7),
+(19, '2022_11_17_084857_add_delete_column_to_user_table', 8);
 
 -- --------------------------------------------------------
 
@@ -210,6 +223,23 @@ CREATE TABLE `rent_logs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `rent_logs`
+--
+
+INSERT INTO `rent_logs` (`id`, `user_id`, `book_id`, `rent_date`, `return_date`, `actual_retrun_date`, `created_at`, `updated_at`) VALUES
+(1, 12, 5, '2022-11-18', '2022-11-21', '2022-11-21', '2022-11-18 05:07:15', '2022-11-18 05:07:15'),
+(2, 12, 6, '2022-11-18', '2022-11-21', '2022-11-21', '2022-11-18 05:07:29', '2022-11-18 05:07:29'),
+(3, 12, 8, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:10:01', '2022-11-18 05:10:01'),
+(4, 2, 16, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:11:03', '2022-11-18 05:11:03'),
+(5, 2, 22, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:11:15', '2022-11-18 05:11:15'),
+(6, 12, 23, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:13:31', '2022-11-18 05:13:31'),
+(7, 2, 28, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:20:32', '2022-11-18 05:20:32'),
+(8, 18, 26, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:20:47', '2022-11-18 05:20:47'),
+(9, 18, 25, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:21:43', '2022-11-18 05:21:43'),
+(10, 18, 27, '2022-11-18', '2022-11-21', NULL, '2022-11-18 05:21:54', '2022-11-18 05:21:54'),
+(11, 20, 11, '2022-11-18', '2022-11-21', NULL, '2022-11-18 06:42:50', '2022-11-18 06:42:50');
+
 -- --------------------------------------------------------
 
 --
@@ -240,26 +270,29 @@ INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'inactive',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `role_id` bigint(20) UNSIGNED NOT NULL
+  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `phone`, `address`, `status`, `created_at`, `updated_at`, `role_id`) VALUES
-(1, 'admin', '$2y$10$VafgAa8Vm9qUxTKhzpae2eKAZmGlOywnZCD5S./jLyClPLHauZmxO', NULL, 'medan', 'active', NULL, NULL, 1),
-(2, 'user1', '$2y$10$VafgAa8Vm9qUxTKhzpae2eKAZmGlOywnZCD5S./jLyClPLHauZmxO', NULL, 'medan', 'inactive', NULL, NULL, 2),
-(3, 'user2 ', '$2y$10$VafgAa8Vm9qUxTKhzpae2eKAZmGlOywnZCD5S./jLyClPLHauZmxO', NULL, 'medan', 'active', NULL, NULL, 2),
-(11, 'zaid', '$2y$10$2N5tnp0fE7HB6Hekzj1PLOyBHmavbhPaExCrbDDoXNpl6ZjhF0DZG', '0101010101', 'medan ku', 'inactive', '2022-11-12 03:30:34', '2022-11-12 03:30:34', 2),
-(12, 'saipul', '$2y$10$oS6Yz4ybZWmDjjrXLGEScO4qaZKxxVTxjmx3VBKV/rBASi8Rw0c3W', '91918191', 'makan', 'inactive', '2022-11-12 03:33:07', '2022-11-12 03:33:07', 2),
-(13, 'kakakak', '$2y$10$3Ahvvl1aWhDnqoQ2JMzhTuIl1IHVoA8IrjykxaR.Ytiy9dUdqEEC6', '012928237878383', 'sdkjlvhskadhjvgbhjsdgbfhjs', 'inactive', '2022-11-14 17:26:06', '2022-11-14 17:26:06', 2);
+INSERT INTO `users` (`id`, `username`, `slug`, `password`, `phone`, `address`, `status`, `created_at`, `updated_at`, `role_id`, `deleted_at`) VALUES
+(1, 'admin', 'admin', '$2y$10$VafgAa8Vm9qUxTKhzpae2eKAZmGlOywnZCD5S./jLyClPLHauZmxO', NULL, 'medan', 'active', NULL, NULL, 1, NULL),
+(2, 'user1', 'user1', '$2y$10$VafgAa8Vm9qUxTKhzpae2eKAZmGlOywnZCD5S./jLyClPLHauZmxO', NULL, 'medan', 'active', NULL, '2022-11-17 07:16:54', 2, NULL),
+(11, 'zaid', 'za8id', '$2y$10$2N5tnp0fE7HB6Hekzj1PLOyBHmavbhPaExCrbDDoXNpl6ZjhF0DZG', '0101010101', 'medan ku', 'active', '2022-11-12 03:30:34', '2022-11-18 07:45:33', 2, NULL),
+(12, 'saipul', 'saipul', '$2y$10$oS6Yz4ybZWmDjjrXLGEScO4qaZKxxVTxjmx3VBKV/rBASi8Rw0c3W', '91918191', 'makan', 'active', '2022-11-12 03:33:07', '2022-11-18 07:45:57', 2, NULL),
+(13, 'kakakak', 'kakak', '$2y$10$3Ahvvl1aWhDnqoQ2JMzhTuIl1IHVoA8IrjykxaR.Ytiy9dUdqEEC6', '012928237878383', 'sdkjlvhskadhjvgbhjsdgbfhjs', 'active', '2022-11-14 17:26:06', '2022-11-18 07:46:14', 2, NULL),
+(18, 'saipul 2', 'saipul2', '$2y$10$VafgAa8Vm9qUxTKhzpae2eKAZmGlOywnZCD5S./jLyClPLHauZmxO', '0128292', 'medan', 'active', NULL, NULL, 2, NULL),
+(20, 'makan', 'makan', '$2y$10$RYfPykqGjYVe4hdyBZsCM.1qbvWi.1BsL/XXe.V58EnyS5YiI/kgq', '030983', 'medan', 'active', '2022-11-17 01:50:19', '2022-11-18 07:46:22', 2, NULL);
 
 --
 -- Indexes for dumped tables
@@ -342,19 +375,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `book_category`
 --
 ALTER TABLE `book_category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -366,7 +399,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -378,7 +411,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `rent_logs`
 --
 ALTER TABLE `rent_logs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -390,7 +423,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
