@@ -65,26 +65,4 @@
         </div>
     </div>
 </div>
-
-    <div class="mt-5">
-        <h2>rent_log</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">User</th>
-                    <th scope="col">Book</th>
-                    <th scope="col">Rent Date</th>
-                    <th scope="col">Return Date</th>
-                    <th scope="col">Actual return Date</th>
-                    <th scope="col">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="7" style="text-align: center">No Data</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 @endsection
